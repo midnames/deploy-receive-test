@@ -1,0 +1,4 @@
+node_modules/
+midnight-level-db
+bun.lock
+src/managed

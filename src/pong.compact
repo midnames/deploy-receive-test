@@ -1,0 +1,18 @@
+pragma language_version 0.20;
+
+import CompactStandardLibrary;
+
+export ledger COIN_COLOR: Bytes<32>;
+export ledger AMOUNT: Uint<128>;
+export ledger DEPLOYER: Bytes<32>;
+
+constructor(color: Bytes<32>, amount: Uint<128>, deployer: Bytes<32>) {
+    COIN_COLOR = disclose(color);
+    AMOUNT = disclose(amount);
+    DEPLOYER = disclose(deployer);
+}
+
+export circuit pong(): [] {
+    receiveUnshielded(COIN_COLOR, AMOUNT);
+    sendUnshielded(COIN_COLOR, AMOUNT, right<ContractAddress, UserAddress>(UserAddress { bytes: DEPLOYER }));
+}
