@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "compact": "compact compile +0.28.0 src/pong.compact src/managed/pong",
+    "compact": "compact compile +0.29.0 src/pong.compact src/managed/pong",
     "compact:skip-zk": "compact compile --skip-zk src/pong.compact src/managed/pong",
     "test": "bun run src/test/full.ts"
   },
